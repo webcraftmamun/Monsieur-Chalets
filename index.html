@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonsieurChalets</title>
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Output css -->
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header area start here -->
+    <header
+      class="flex bg-white font-[Inter] min-h-[80px] tracking-wide relative z-50"
+    >
+      <div
+        class="flex flex-wrap items-center justify-between px-3 mx-auto lg:px-5 py-3 gap-4 w-full "
+      >
+        <!-- Logo Section -->
+        <a href="javascript:void(0)">
+          <img
+            src="./src/assets/images/MonsieurChalets-logo.png "
+            alt="MonsieurChalets"
+            class="w-[224.4px]"
+          />
+        </a>
+
+        <!-- Mobile Menu Section (visible on smaller screens) -->
+        <div
+          id="collapseMenu"
+          class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50"
+        >
+          <!-- Close button for mobile menu -->
+          <button
+            id="toggleClose"
+            class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
+          >
+            <i class="text-2xl fa-solid fa-xmark"></i>
+          </button>
+
+          <!-- Mobile Menu Items (hidden on large screens) -->
+          <ul
+            class="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+          >
+            <!-- Logo in the mobile menu (visible only on mobile) -->
+            <li class="mb-6 hidden max-lg:block">
+              <a href="javascript:void(0)">
+                <img
+                  src="./src/assets/images/MonsieurChalets-logo.png"
+                  alt="MonsieurChalets"
+                  class="w-36"
+                />
+              </a>
+            </li>
+
+            <li class="group max-lg:border-b border-gray-100 relative">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-heading text-lightParagraph text-[15px] font-medium lg:hover:fill-heading block px-2 py-3"
+                >Cottage Rental
+                <i
+                  class="w-[16px] h-[16px] ml-1 inline-block fa-solid fa-chevron-down"
+                ></i>
+              </a>
+
+              <ul
+                class="absolute shadow-lg bg-white space-y-3 lg:top-12 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500"
+              >
+                <!-- Example Sub Menu Items -->
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 1</a
+                  >
+                </li>
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 2</a
+                  >
+                </li>
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 3</a
+                  >
+                </li>
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 4</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="max-lg:border-b">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-heading text-lightParagraph text-[14px] font-medium block px-2 py-3"
+                >Contact Us</a
+              >
+            </li>
+
+            <li class="max-lg:border-b">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-heading text-lightParagraph text-[14px] font-medium block px-2 py-3"
+                >Help</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right-side Buttons and Language Dropdown -->
+        <div class="flex items-center space-x-4 max-lg:ml-auto">
+          <button
+            class="px-4 py-2 text-sm rounded-full font-bold text-gray-500 border-2 bg-transparent hover:bg-gray-100 transition-all ease-in-out duration-300 hidden lg:inline-block"
+          >
+            Login
+          </button>
+
+          <button
+            class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-heading bg-heading transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading hidden lg:inline-block"
+          >
+            Become Host
+          </button>
+
+          <!-- Language Dropdown Button -->
+          <div class="relative hidden lg:inline-block">
+            <button
+              class="language-button flex items-center px-3 py-1 rounded focus:outline-none"
+            >
+              EN
+              <i class="fas fa-chevron-down ml-2 text-sm"></i>
+            </button>
+            <!-- Dropdown Items for Language Selection -->
+            <div
+              class="absolute left-0 mt-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >EN</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >FR</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >ES</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >DE</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Menu Toggle Button (visible on small screens) -->
+          <button
+            id="toggleOpen"
+            class="lg:hidden hover:bg-lightParagraph hover:text-white border w-[45px] h-[45px] rounded-full flex items-center justify-center"
+          >
+            <i class="text-2xl fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner area -->
+    <section class="py-10 px-3 md:py-20">
+      <div class="container mx-auto">
+        <!-- Banner top bar text area -->
+        <div class="w-full lg:w-[850px] mx-auto text-center">
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-normal text-heading">
+            The top 1% of curated vacation rentals worldwide
+          </h1>
+          <p class="mt-4 text-paragraph">
+            MonsieurChalets is the destination for booking exceptional homes
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Banner area -->
+    <section
+      class="md:mx-3 bg-cover bg-center py-5 px-3 md:py-20 rounded-lg lg:rounded-3xl"
+      style="
+        background-image: url('./src/assets/images/MonsieurChaletshome collection.jpg');
+      "
+    >
+      <div class="container mx-auto">
+        <div class="w-full lg:w-[850px] mx-auto bg-white p-10 rounded-2xl">
+          <img
+            src="./src/assets/images/MonsieurChalets-footer-logo.png"
+            alt="MonsieurChalets"
+            class="w-10"
+          />
+          <h2 class="text-2xl md:text-3xl lg:text-4xl leading-tight py-5">
+            MonsieurChalets is the world's leading curated home collection
+          </h2>
+          <div class="">
+            <p>Here's why.</p>
+            <p class="py-4">
+              MonsieurChlaets has redefined the vacation rental landscape. We
+              are the only <br />
+              platform that meticulously curates extraordinary homes worldwide
+              on an unprecedented scale.
+            </p>
+            <p>
+              Our unique blend of home expertise, customer-centric focus, and
+              cutting-edge AI technology has propelled us into an exceptional
+              league of our own.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client logo infinity  carousel -->
+
+    <section class="pt-5 md:pt-10">
+      <div class="container mx-auto">
+        <div class="relative overflow-hidden bg-white py-10">
+          <!-- Left gradient overlay -->
+          <div
+            class="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white to-transparent z-10"
+          ></div>
+
+          <!-- Scrolling logos -->
+          <div class="logo-track flex space-x-10 animate-scroll">
+            >
+            <!-- Original set of logos -->
+            <img
+              src="./src/assets/images/client logo 1.png"
+              alt="Client Logo 1"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 2.png"
+              alt="Client Logo 2"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 3.png"
+              alt="Client Logo 3"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 4.png"
+              alt="Client Logo 4"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 5.png"
+              alt="Client Logo 5"
+              class="logo h-12"
+            />
+            <!-- Duplicate set of logos for seamless scrolling -->
+            <img
+              src="./src/assets/images/client logo 1.png"
+              alt="Client Logo 1"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 2.png"
+              alt="Client Logo 2"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 3.png"
+              alt="Client Logo 3"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 4.png"
+              alt="Client Logo 4"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 5.png"
+              alt="Client Logo 5"
+              class="logo h-12"
+            />
+          </div>
+
+          <!-- Right gradient overlay -->
+          <div
+            class="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white to-transparent z-10"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-10 px-3 md:py-24">
+      <div class="container mx-auto">
+        <div class="w-full lg:w-[850px] mx-auto">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl leading-tight pb-12">
+            A one of a kind booking platform
+          </h2>
+          <div class="flex items-center gap-4 md:gap-6 pb-8">
+            <h1 class="text-[#E5E5E5] text-6xl font-normal">1</h1>
+            <div class="flex flex-col gap-1">
+              <h4 class="font-medium text-lg lg:text-xl">
+                The world’s largest collection of curated homes
+              </h4>
+              <p class="text-base text-lightParagraph">
+                Plum Guide is the only booking platform with 40,000+of the
+                world’s most remarkable rentals.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 md:gap-6 pb-8">
+            <h1 class="text-[#E5E5E5] text-6xl font-normal">2</h1>
+            <div class="flex flex-col gap-1">
+              <h4 class="font-medium text-lg lg:text-xl">
+                Powered by “award-winning” AI technology
+              </h4>
+              <p class="text-base text-lightParagraph">
+                Build from scratch. Our AI backed curation model is unique to
+                our business.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 md:gap-6 pb-8">
+            <h1 class="text-[#E5E5E5] text-6xl font-normal">3</h1>
+            <div class="flex flex-col gap-1">
+              <h4 class="font-medium text-lg lg:text-xl">
+                Rated “Excellent” on TrustPilot
+              </h4>
+              <p class="text-base text-lightParagraph">
+                Rated excellent for a reason. Need we say more?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- brand video area -->
+    <section
+      class="relative md:mx-3 bg-cover bg-center py-5 px-3 md:py-20 rounded-lg lg:rounded-3xl min-h-fit md:min-h-[650px]"
+      style="
+        background-image: url('./src/assets/images/The New York Times.png');
+      "
+    >
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black opacity-90 rounded-lg lg:rounded-3xl"
+      ></div>
+
+      <div class="container mx-auto relative z-10">
+        <div
+          class="w-full lg:w-[850px] mx-auto p-5 md:px-20 rounded-2xl text-center"
+        >
+          <h2
+            class="text-2xl md:text-3xl lg:text-4xl leading-normal py-5 text-white"
+          >
+            “MonsieurChalets stands out for its selective list of properties”
+          </h2>
+          <p class="text-white">— The New York Times</p>
+          <!-- Video Play Icon -->
+          <a
+            class="pulsing-glow relative w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mt-10 md:mt-20"
+            href="#"
+            ><i class="fa-solid fa-play text-black text-3xl"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Others information -->
+    <section class="py-20">
+      <div class="container mx-auto">
+        <div class="w-full lg:w-[850px] mx-auto p-5 md:px-20">
+          <div class="pb-16 border-b text-center">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">
+              Our model achieves <br />
+              a 91% match rate to the human eye
+            </h2>
+            <p class="leading-8">
+              The journey began by training the model to align with our design
+              standards—a <br />
+              staggering 91% match between AI judgement and our Design
+              Director's discerning eye. Homes gaining AI approval then undergo
+              a rigorous in-house home expert review—a fusion of human and
+              machine perfection.
+            </p>
+          </div>
+          <div class="py-16 border-b text-center">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">
+              AI trained on data from <br />
+              more than 100,000 vetted homes
+            </h2>
+            <p class="leading-8">
+              The journey began by training the model to align with our design
+              standards—a staggering 91% match between AI judgement and our
+              Design Director's discerning eye. Homes gaining AI approval then
+              undergo a rigorous in-house home expert review—a fusion of human
+              and machine perfection.
+            </p>
+          </div>
+          <div class="pt-16 text-center">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">
+              AI has allowed us to <br />
+              4x our revenue per head
+            </h2>
+            <p class="leading-8">
+              The journey began by training the model to align with our design
+              standards—a staggering 91% match between AI judgement and our
+              Design Director's discerning eye. Homes gaining AI approval then
+              undergo a rigorous in-house home expert review—a fusion of human
+              and machine perfection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonial area -->
+
+    <section class="pb-20 mx-3">
+      <div class="container mx-auto">
+        <div class="w-full lg:w-[850px] mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl">
+            More stays, <br />
+            without working harder
+          </h2>
+          <p class="pt-3">
+            Posting is free, we only keep a commission when our team sends you
+            new visitors through our agency. You retain full control of your
+            property your property and we act as your facilitating partner.
+          </p>
+        </div>
+
+        <div class="w-full lg:w-[1000px] mx-auto pt-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              style="
+                background-image: url('./src/assets/images/testimonials banner 1.png');
+              "
+            >
+              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
+                <img
+                  class="block"
+                  src="./src/assets/images/5 star.png"
+                  alt=""
+                />
+                <p class="py-4">
+                  We had a pleasant weekend. The house is well maintained and
+                  clean. The decor overlooking the river is spectacular.
+                </p>
+
+                <div class="flex justify-between items-end gap-5">
+                  <div>
+                    <h4 class="font-bold text-sm pb-1 font-inter">
+                      Marie-Therese Martel
+                    </h4>
+                    <p class="text-xs">14 July 2023</p>
+                  </div>
+                  <img src="./src/assets/images/Google Logo.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              style="
+                background-image: url('./src/assets/images/testimonials banner 2.png');
+              "
+            >
+              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
+                <img
+                  class="block"
+                  src="./src/assets/images/5 star.png"
+                  alt=""
+                />
+                <p class="py-4">
+                  We had a pleasant weekend. The house is well maintained and
+                  clean. The decor overlooking the river is spectacular.
+                </p>
+
+                <div class="flex justify-between items-end gap-5">
+                  <div>
+                    <h4 class="font-bold text-sm pb-1 font-inter">
+                      Marie-Therese Martel
+                    </h4>
+                    <p class="text-xs">14 July 2023</p>
+                  </div>
+                  <img src="./src/assets/images/Google Logo.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              style="
+                background-image: url('./src/assets/images/testimonials banner 3.png');
+              "
+            >
+              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
+                <img
+                  class="block"
+                  src="./src/assets/images/5 star.png"
+                  alt=""
+                />
+                <p class="py-4">
+                  We had a pleasant weekend. The house is well maintained and
+                  clean. The decor overlooking the river is spectacular.
+                </p>
+
+                <div class="flex justify-between items-end gap-5">
+                  <div>
+                    <h4 class="font-bold text-sm pb-1 font-inter">
+                      Marie-Therese Martel
+                    </h4>
+                    <p class="text-xs">14 July 2023</p>
+                  </div>
+                  <img src="./src/assets/images/Google Logo.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              style="
+                background-image: url('./src/assets/images/testimonials banner 4.png');
+              "
+            >
+              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
+                <img
+                  class="block"
+                  src="./src/assets/images/5 star.png"
+                  alt=""
+                />
+                <p class="py-4">
+                  We had a pleasant weekend. The house is well maintained and
+                  clean. The decor overlooking the river is spectacular.
+                </p>
+
+                <div class="flex justify-between items-end gap-5">
+                  <div>
+                    <h4 class="font-bold text-sm pb-1 font-inter">Emma</h4>
+                    <p class="text-xs">14 July 2023</p>
+                  </div>
+                  <img src="./src/assets/images/Google Logo.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- call to action area -->
+    <section class="pb-20 mx-3">
+      <div class="container mx-auto">
+        <div class="w-full lg:w-[1000px] mx-auto text-center">
+          <img
+            src="./src/assets/images/MonsieurChalets-footer-logo.png"
+            alt="MonsieurChalets"
+            width="50"
+            class="block mx-auto"
+          />
+          <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">Talk to us</h2>
+          <p>
+            If you're interested in forming a partnership <br />
+            with MonsieurChalets,
+            <span class="text-heading text-lg">speak to our team.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Only show tab and mobile view -->
+    <section
+      class="fixed bottom-0 flex justify-between items-start gap-5 px-4 py-5 border-t bg-white z-30 w-full lg:hidden"
+    >
+      <!-- Login Button (hidden on small screens) -->
+      <button
+        class="px-4 py-2 text-sm rounded-full font-bold text-gray-500 border-2 bg-transparent hover:bg-gray-100 transition-all ease-in-out duration-300"
+      >
+        Login
+      </button>
+
+      <!-- Become Host Button (hidden on small screens) -->
+      <button
+        class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-heading bg-heading transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading"
+      >
+        Become Host
+      </button>
+
+      <!-- Language Dropdown Button -->
+      <div class="relative inline-block">
+        <button
+          class="language-button flex items-center px-3 py-1 rounded focus:outline-none"
+        >
+          EN
+          <i class="fas fa-chevron-down ml-2 text-sm"></i>
+        </button>
+        <!-- Dropdown Items for Language Selection -->
+        <div
+          class="absolute right-0 bottom-6 mb-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
+        >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >EN</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >FR</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >ES</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >DE</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer area -->
+    <footer
+      class="bg-background pt-10 pb-28 md:py-20 text-sm text-gray-600 font-libre"
+    >
+      <div class="max-w-full lg:max-w-[1104px] mx-auto px-4">
+        <!-- Upper Section -->
+        <div
+          class="flex flex-wrap flex-col md:flex-row justify-between mb-5 md:mb-10"
+        >
+          <!-- Logo and Social Media -->
+          <div
+            class="flex border-b md:border-b-0 pb-5 md:pb-0 flex-row md:flex-col justify-between md:items-start gap-4"
+          >
+            <div class="flex flex-col gap-4">
+              <a href="">
+                <img
+                  src="./src/assets/images/MonsieurChalets-footer-logo.png"
+                  alt="MonsieurChalets"
+                  class="w-10"
+              /></a>
+
+              <div class="flex gap-4">
+                <a
+                  href="#"
+                  class="text-lightParagraph hover:text-gray-800"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-lightParagraph hover:text-gray-800"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-lightParagraph hover:text-gray-800"
+                  aria-label="Pinterest"
+                >
+                  <i class="fab fa-pinterest text-xl"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Language Dropdown -->
+
+            <div class="relative">
+              <button
+                class="language-button flex items-center border border-gray-300 bg-white hover:bg-gray-200 px-3 py-1 rounded-full focus:outline-none"
+              >
+                EN
+                <i class="fas fa-chevron-down ml-2 text-sm"></i>
+              </button>
+              <!-- Dropdown Items -->
+              <div
+                class="absolute right-0 md:left-0 mt-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >EN</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >FR</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >ES</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >DE</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Links -->
+          <!-- Column 1 -->
+          <div
+            class="flex flex-col gap-4 lg:gap-5 border-b md:border-b-0 py-5 md:pb-0"
+          >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Blog</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Become a host</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Gift
+              Certificate</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Training
+              Academy</a
+            >
+          </div>
+          <!-- Column 2 -->
+          <div
+            class="flex flex-col gap-4 lg:gap-5 border-b md:border-b-0 py-5 md:pb-0"
+          >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> About Us</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Careers</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Help</a
+            >
+          </div>
+          <!-- Column 3 -->
+          <div class="flex flex-col gap-4 lg:gap-5 py-5 md:pb-0">
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Contact Us</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Owner Section</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              ></i> Help</a
+            >
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div
+          class="border-t border-gray-300 pt-5 md:pt-10 md:pb-10 lg:pb-0 flex flex-wrap justify-between items-center text-[14px]"
+        >
+          <div class="text-center md:text-left w-full md:w-auto">
+            © 2024 - MonsieurChalets.com. All rights reserved
+          </div>
+          <div class="text-center md:text-right w-full md:w-auto">
+            <a href="#" class="text-paragraph hover:text-heading"
+              >Policies & Terms</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle functionality
+      const toggleOpen = document.getElementById("toggleOpen");
+      const toggleClose = document.getElementById("toggleClose");
+      const collapseMenu = document.getElementById("collapseMenu");
+
+      function handleClick() {
+        if (collapseMenu.style.display === "block") {
+          collapseMenu.style.display = "none";
+        } else {
+          collapseMenu.style.display = "block";
+        }
+      }
+
+      toggleOpen.addEventListener("click", handleClick);
+      toggleClose.addEventListener("click", handleClick);
+
+      // Handle multiple language dropdowns
+      document.querySelectorAll(".language-button").forEach((button) => {
+        const dropdown = button.nextElementSibling; // Target the adjacent dropdown
+
+        // Toggle dropdown on button click
+        button.addEventListener("click", (e) => {
+          e.stopPropagation(); // Prevent the click from closing immediately
+          dropdown.classList.toggle("hidden");
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener("click", (e) => {
+          if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
