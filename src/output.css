@@ -2363,10 +2363,6 @@ p,
   padding-top: 4rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
-}
-
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -3425,10 +3421,6 @@ p,
 
   .lg\:w-\[850px\] {
     width: 850px;
-  }
-
-  .lg\:w-\[80\%\] {
-    width: 80%;
   }
 
   .lg\:max-w-\[1104px\] {
