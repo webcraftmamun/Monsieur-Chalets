@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonsieurChalets</title>
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Output css -->
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header area start here -->
+    <header
+      class="flex bg-white font-[Inter] min-h-[80px] tracking-wide relative z-50"
+    >
+      <div
+        class="flex flex-wrap items-center justify-between px-3 mx-auto lg:px-5 py-3 gap-4 w-full"
+      >
+        <!-- Logo Section -->
+        <a href="javascript:void(0)">
+          <img
+            src="./src/assets/images/MonsieurChalets-logo.png "
+            alt="MonsieurChalets"
+            class="w-[224.4px]"
+          />
+        </a>
+
+        <!-- Mobile Menu Section (visible on smaller screens) -->
+        <div
+          id="collapseMenu"
+          class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50"
+        >
+          <!-- Close button for mobile menu -->
+          <button
+            id="toggleClose"
+            class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
+          >
+            <i class="text-2xl fa-solid fa-xmark"></i>
+          </button>
+
+          <!-- Mobile Menu Items (hidden on large screens) -->
+          <ul
+            class="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+          >
+            <!-- Logo in the mobile menu (visible only on mobile) -->
+            <li class="mb-6 hidden max-lg:block">
+              <a href="javascript:void(0)">
+                <img
+                  src="./src/assets/images/MonsieurChalets-logo.png"
+                  alt="MonsieurChalets"
+                  class="w-36"
+                />
+              </a>
+            </li>
+
+            <li class="group max-lg:border-b border-gray-100 relative">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-heading text-lightParagraph text-[15px] font-medium lg:hover:fill-heading block px-2 py-3"
+                >Cottage Rental
+                <i
+                  class="w-[16px] h-[16px] ml-1 inline-block fa-solid fa-chevron-down"
+                ></i>
+              </a>
+
+              <ul
+                class="absolute shadow-lg bg-white space-y-3 lg:top-12 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500"
+              >
+                <!-- Example Sub Menu Items -->
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 1</a
+                  >
+                </li>
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 2</a
+                  >
+                </li>
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 3</a
+                  >
+                </li>
+                <li class="border-b">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-heading text-lightParagraph text-[15px] font-medium block py-2"
+                    >Example Sub Menu 4</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="max-lg:border-b">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-heading text-lightParagraph text-[14px] font-medium block px-2 py-3"
+                >Contact Us</a
+              >
+            </li>
+
+            <li class="max-lg:border-b">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-heading text-lightParagraph text-[14px] font-medium block px-2 py-3"
+                >Help</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right-side Buttons and Language Dropdown -->
+        <div class="flex items-center space-x-4 max-lg:ml-auto">
+          <button
+            class="px-4 py-2 text-sm rounded-full font-bold text-gray-500 border-2 bg-transparent hover:bg-gray-100 transition-all ease-in-out duration-300 hidden lg:inline-block"
+          >
+            Login
+          </button>
+
+          <button
+            class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-heading bg-heading transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading hidden lg:inline-block"
+          >
+            Become Host
+          </button>
+
+          <!-- Language Dropdown Button -->
+          <div class="relative hidden lg:inline-block">
+            <button
+              class="language-button flex items-center px-3 py-1 rounded focus:outline-none"
+            >
+              EN
+              <i class="fas fa-chevron-down ml-2 text-sm"></i>
+            </button>
+            <!-- Dropdown Items for Language Selection -->
+            <div
+              class="absolute right-0 mt-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >EN</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >FR</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >ES</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                >DE</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Menu Toggle Button (visible on small screens) -->
+          <button
+            id="toggleOpen"
+            class="lg:hidden hover:bg-lightParagraph hover:text-white border w-[45px] h-[45px] rounded-full flex items-center justify-center"
+          >
+            <i class="text-2xl fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner area-->
+    <section
+      class="relative md:mx-3 py-5 px-3 md:py-20 rounded-lg lg:rounded-3xl"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+          url('./src/assets/images/Cottage Rental Agency.png');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="container mx-auto relative z-10">
+        <div
+          class="w-full lg:w-[850px] mx-auto p-5 md:px-20 rounded-2xl text-center flex flex-col gap-20 justify-between min-h-[400px] lg:min-h-[650px]"
+        >
+          <!-- Content -->
+          <div class="flex flex-col gap-2 lg:gap-4">
+            <p class="text-white text-sm">
+              MonsieurChalets is the destination for booking exceptional homes
+            </p>
+            <h2
+              class="text-3xl md:text-5xl lg:text-6xl font-normal leading-normal py-0 lg:py-5 text-white"
+            >
+              Cottage Rental Agency
+            </h2>
+            <p class="text-white">
+              MonsieurChalets is the destination for booking exceptional homes
+            </p>
+            <button
+              class="px-4 py-2 text-sm w-fit m-auto rounded-full font-bold text-black border-2 border-white bg-white transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading"
+            >
+              Apply Now
+            </button>
+          </div>
+
+          <!-- Ratting -->
+          <div
+            class="flex items-center gap-3 justify-center flex-col md:flex-row"
+          >
+            <img src="./src/assets/images/ratting.png" alt="" />
+            <p class="text-white text-sm">Rating by Google Review Users</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client logo infinity  carousel -->
+    <section class="pt-5 md:pt-10">
+      <div class="container mx-auto">
+        <div class="relative overflow-hidden bg-white py-10">
+          <!-- Left gradient overlay -->
+          <div
+            class="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white to-transparent z-10"
+          ></div>
+
+          <!-- Scrolling logos -->
+          <div class="logo-track flex space-x-10 animate-scroll">
+            >
+            <!-- Original set of logos -->
+            <img
+              src="./src/assets/images/client logo 1.png"
+              alt="Client Logo 1"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 2.png"
+              alt="Client Logo 2"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 3.png"
+              alt="Client Logo 3"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 4.png"
+              alt="Client Logo 4"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 5.png"
+              alt="Client Logo 5"
+              class="logo h-12"
+            />
+            <!-- Duplicate set of logos for seamless scrolling -->
+            <img
+              src="./src/assets/images/client logo 1.png"
+              alt="Client Logo 1"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 2.png"
+              alt="Client Logo 2"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 3.png"
+              alt="Client Logo 3"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 4.png"
+              alt="Client Logo 4"
+              class="logo h-12"
+            />
+            <img
+              src="./src/assets/images/client logo 5.png"
+              alt="Client Logo 5"
+              class="logo h-12"
+            />
+          </div>
+
+          <!-- Right gradient overlay -->
+          <div
+            class="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white to-transparent z-10"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- features items -->
+    <section class="py-20 px-3">
+      <div class="container mx-auto">
+        <div class="w-full lg:w-[850px] mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl">
+            More stays, <br />
+            without working harder
+          </h2>
+          <p class="pt-3">
+            Posting is free, we only keep a commission when our team sends you
+            new visitors through our agency. You retain full control of your
+            property your property and we act as your facilitating partner.
+          </p>
+        </div>
+
+        <div class="w-full xl:w-[1104px] mx-auto pt-8">
+          <div class="flex flex-wrap gap-4">
+            <!-- Feature Item -->
+            <div
+              class="flex w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-12px)] flex-col text-center p-6 bg-white border border-gray-200 rounded-lg shadow transition-all hover:bg-background"
+            >
+              <img
+                class="w-16 mx-auto pb-4"
+                src="./src/assets/images/icon 1.png"
+                alt=""
+              />
+              <h3 class="text-lg md:text-2xl pb-1">
+                Reach over 5.5 million respected visitors
+              </h3>
+              <p>
+                Take advantage of our expertise in digital placement and
+                positioning to increase the awareness of your property.
+              </p>
+            </div>
+
+            <!-- Feature Item -->
+            <div
+              class="flex w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-12px)] flex-col text-center p-6 bg-white border border-gray-200 rounded-lg shadow transition-all hover:bg-background"
+            >
+              <img
+                class="w-16 mx-auto pb-4"
+                src="./src/assets/images/icon 2.png"
+                alt=""
+              />
+              <h3 class="text-lg md:text-2xl pb-1">
+                Your partner for cottage rentals in Quebec
+              </h3>
+              <p>
+                Our team handles all requests for your cottage before, during
+                and after your stay by offering a customized service.
+              </p>
+            </div>
+
+            <!-- Feature Item -->
+            <div
+              class="flex w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-12px)] flex-col text-center p-6 bg-white border border-gray-200 rounded-lg shadow transition-all hover:bg-background"
+            >
+              <img
+                class="w-16 mx-auto pb-4"
+                src="./src/assets/images/icon 3.png"
+                alt=""
+              />
+              <h3 class="text-lg md:text-2xl pb-1">
+                Create a recurring clientele
+              </h3>
+              <p>
+                Our clients travel from cottage to cottage throughout Quebec
+                several times a year, which is a great way to ensure future
+                revenues.
+              </p>
+            </div>
+          </div>
+
+          <button
+            class="px-4 py-2 text-sm flex w-fit mx-auto mt-9 rounded-full font-bold text-white border-2 border-heading bg-heading transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading"
+          >
+            Submit your house
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- call to action area -->
+    <section class="bg-black rounded-lg lg:rounded-3xl">
+      <div class="flex gap-2">
+        <div class="w-6/12 md:w-[30%]">
+          <img
+            class="w-full h-[250px] md:h-[400px] lg:h-[452px] object-cover lg:rounded-tl-3xl lg:rounded-br-3xl"
+            src="./src/assets/images/rental agency 1.png"
+          />
+        </div>
+        <div class="w-6/12 md:w-[40%]">
+          <img
+            class="w-full h-[250px] md:h-[400px] lg:h-[452px] object-cover lg:rounded-b-3xl"
+            src="./src/assets/images/rental agency 2.png"
+          />
+        </div>
+        <div class="w-full md:w-[30%] hidden md:block">
+          <img
+            class="w-full h-[250px] md:h-[400px] lg:h-[452px] object-cover lg:rounded-r-3xl lg:rounded-b-3xl"
+            src="./src/assets/images/rental agency 3.png"
+          />
+        </div>
+      </div>
+      <div class="w-full px-3 py-14 md:w-[585px] mx-auto text-center">
+        <img
+          src="./src/assets/images/MonsieurChalets-footer-logo-white.png"
+          alt="MonsieurChalets"
+          width="50"
+          class="block mx-auto"
+        />
+        <h2 class="text-2xl md:text-3xl lg:text-4xl py-5 text-white">
+          The reference cottage rental agency in Quebec
+        </h2>
+        <p>
+          With products throughout the province of Quebec, a North American
+          clientele and a team that is up to date on the market, your cottage is
+          in good hands.
+        </p>
+        <button
+          class="px-4 py-2 text-sm w-fit mx-auto mt-9 rounded-full font-bold text-black border-2 border-white bg-white transition-all ease-in-out duration-300 hover:bg-transparent hover:text-white"
+        >
+          Apply Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Accordion -->
+    <section class="py-20 px-3">
+      <div class="container mx-auto">
+        <div class="w-full lg:w-[850px] mx-auto">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl text-center pb-8">
+            Frequently asked questions
+          </h2>
+
+          <div class="">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item border-b border-slate-200">
+              <button
+                onclick="toggleAccordion(1)"
+                class="text-left font-inter accordion-header w-full flex justify-between items-center py-5 text-slate-800 text-lg font-medium hover:text-black"
+                data-header-id="1"
+              >
+                <span>Can I continue to host on other platforms?</span>
+                <i
+                  id="icon-1"
+                  class="fa-solid fa-chevron-down transition-transform duration-300"
+                ></i>
+              </button>
+              <div
+                id="content-1"
+                class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+              >
+                <p class="pb-5 text-slate-500">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item border-b border-slate-200">
+              <button
+                onclick="toggleAccordion(2)"
+                class="text-left font-inter accordion-header w-full flex justify-between items-center py-5 text-slate-800 text-lg font-medium hover:text-black"
+                data-header-id="2"
+              >
+                <span>What happens in case of damages?</span>
+                <i
+                  id="icon-2"
+                  class="fa-solid fa-chevron-down transition-transform duration-300"
+                ></i>
+              </button>
+              <div
+                id="content-2"
+                class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+              >
+                <p class="pb-5 text-slate-500">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item border-b border-slate-200">
+              <button
+                onclick="toggleAccordion(3)"
+                class="text-left font-inter accordion-header w-full flex justify-between items-center py-5 text-slate-800 text-lg font-medium hover:text-black"
+                data-header-id="3"
+              >
+                <span>When will I get paid?</span>
+                <i
+                  id="icon-3"
+                  class="fa-solid fa-chevron-down transition-transform duration-300"
+                ></i>
+              </button>
+              <div
+                id="content-3"
+                class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+              >
+                <p class="pb-5 text-slate-500">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div class="accordion-item border-b border-slate-200">
+              <button
+                onclick="toggleAccordion(4)"
+                class="text-left font-inter accordion-header w-full flex justify-between items-center py-5 text-slate-800 text-lg font-medium hover:text-black"
+                data-header-id="4"
+              >
+                <span
+                  >How do I synchronize my calendar between booking
+                  platforms?</span
+                >
+                <i
+                  id="icon-4"
+                  class="fa-solid fa-chevron-down transition-transform duration-300"
+                ></i>
+              </button>
+              <div
+                id="content-4"
+                class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+              >
+                <p class="pb-5 text-slate-500">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 5 -->
+            <div class="accordion-item border-b border-slate-200">
+              <button
+                onclick="toggleAccordion(5)"
+                class="text-left font-inter accordion-header w-full flex justify-between items-center py-5 text-slate-800 text-lg font-medium hover:text-black"
+                data-header-id="5"
+              >
+                <span>I've never hosted before. Can I still apply?</span>
+                <i
+                  id="icon-5"
+                  class="fa-solid fa-chevron-down transition-transform duration-300"
+                ></i>
+              </button>
+              <div
+                id="content-5"
+                class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+              >
+                <p class="pb-5 text-slate-500">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 6 -->
+            <div class="accordion-item border-b border-slate-200">
+              <button
+                onclick="toggleAccordion(7)"
+                class="text-left font-inter accordion-header w-full flex justify-between items-center py-5 text-slate-800 text-lg font-medium hover:text-black"
+                data-header-id="5"
+              >
+                <span>What are your fees?</span>
+                <i
+                  id="icon-7"
+                  class="fa-solid fa-chevron-down transition-transform duration-300"
+                ></i>
+              </button>
+              <div
+                id="content-7"
+                class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+              >
+                <p class="pb-5 text-slate-500">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Carousel -->
+    <section class="pb-20 md:pt-20 px-3">
+      <div class="container mx-auto">
+        <div class="w-full xl:w-[1104px] mx-auto">
+          <div class="flex flex-col items-center justify-center">
+            <div class="relative w-full">
+              <!-- Left Arrow -->
+              <button
+                id="prevButton"
+                class="absolute left-0 top-1/2 w-[40px] h-[40px] md:w-[60px] md:h-[60px] transform -translate-y-1/2 bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <!-- Testimonial Content -->
+              <div
+                id="testimonialContainer"
+                class="text-center w-11/12 md:w-8/12 mx-auto overflow-hidden"
+              >
+                <div
+                  class="testimonialContainerItems flex transition-transform duration-700"
+                >
+                  <!-- Testimonial 1 -->
+                  <div class="testimonial w-full text-center px-4">
+                    <img
+                      src="/src/assets/images/Mathieu Ferron.png"
+                      alt="User"
+                      class="mx-auto mb-4 w-24 h-24 rounded-full object-cover shadow"
+                    />
+                    <h3 class="font-medium text-xl font-inter text-heading">
+                      Dale Fox
+                    </h3>
+                    <p class="text-gray-500">Plum Guide host</p>
+                    <p class="mt-4 text-sm md:text-lg italic text-gray-700">
+                      "I simply adore the team at MonsieurChalets. Top-notch
+                      professionals who are a joy to work with. The writing and
+                      photography for our home is amazing. I know for sure that
+                      the guests and properties are well vetted."
+                    </p>
+                  </div>
+
+                  <!-- Testimonial 2 -->
+
+                  <div class="testimonial w-full text-center px-4">
+                    <img
+                      src="https://via.placeholder.com/100"
+                      alt="User"
+                      class="mx-auto mb-4 w-24 h-24 rounded-full object-cover shadow"
+                    />
+                    <h3 class="font-medium text-xl font-inter text-heading">
+                      Jane Doe
+                    </h3>
+                    <p class="text-gray-500">Plum Guide host</p>
+                    <p class="mt-4 text-sm md:text-lg italic text-gray-700">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+
+                  <!-- Testimonial 3 -->
+                  <div class="testimonial w-full text-center px-4">
+                    <img
+                      src="https://via.placeholder.com/200"
+                      alt="User"
+                      class="mx-auto mb-4 w-24 h-24 rounded-full object-cover shadow"
+                    />
+                    <h3 class="font-medium text-xl font-inter text-heading">
+                      Dale Fox
+                    </h3>
+                    <p class="text-gray-500">Plum Guide host</p>
+                    <p class="mt-4 text-sm md:text-lg italic text-gray-700">
+                      "I simply adore the team at MonsieurChalets. Top-notch
+                      professionals who are a joy to work with. The writing and
+                      photography for our home is amazing. I know for sure that
+                      the guests and properties are well vetted."
+                    </p>
+                  </div>
+
+                  <!-- Testimonial 3 -->
+
+                  <div class="testimonial w-full text-center px-4">
+                    <img
+                      src="https://via.placeholder.com/300"
+                      alt="User"
+                      class="mx-auto mb-4 w-24 h-24 rounded-full object-cover shadow"
+                    />
+                    <h3 class="font-medium text-xl font-inter text-heading">
+                      Jane Doe
+                    </h3>
+                    <p class="text-gray-500">Plum Guide host</p>
+                    <p class="mt-4 text-sm md:text-lg italic text-gray-700">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+                  <!-- Testimonial 3 -->
+
+                  <div class="testimonial w-full text-center px-4">
+                    <img
+                      src="https://via.placeholder.com/300"
+                      alt="User"
+                      class="mx-auto mb-4 w-24 h-24 rounded-full object-cover shadow"
+                    />
+                    <h3 class="font-medium text-xl font-inter text-heading">
+                      Jane Doe
+                    </h3>
+                    <p class="text-gray-500">Plum Guide host</p>
+                    <p class="mt-4 text-sm md:text-lg italic text-gray-700">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+
+                  <div class="testimonial w-full text-center px-4">
+                    <img
+                      src="https://via.placeholder.com/300"
+                      alt="User"
+                      class="mx-auto mb-4 w-24 h-24 rounded-full object-cover shadow"
+                    />
+                    <h3 class="font-medium text-xl font-inter text-heading">
+                      Jane Doe
+                    </h3>
+                    <p class="text-gray-500">Plum Guide host</p>
+                    <p class="mt-4 text-sm md:text-lg italic text-gray-700">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Arrow -->
+              <button
+                id="nextButton"
+                class="absolute right-0 top-1/2 w-[40px] h-[40px] md:w-[60px] md:h-[60px] transform -translate-y-1/2 bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+            <!-- Dots Navigation Container -->
+            <div
+              class="mt-6 flex justify-center items-center space-x-2 dots-container"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact area -->
+
+    <section class="pb-20 overflow-hidden">
+      <div
+        class="w-full relative flex flex-col-reverse md:flex-row md:items-center lg:justify-end xl:gap-40"
+      >
+        <div class="w-full lg:w-[700px] flex px-3">
+          <div class="bg-white w-full rounded-lg -mt-28 md:mt-0 p-5 md:p-0">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl pb-4">
+              Contact the Monsieur Chalets team
+            </h2>
+            <p>
+              Please complete this form so that a member of our team can assist
+              you.
+            </p>
+
+            <form class="pt-10">
+              <div class="flex flex-col gap-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label for="name" class="text-gray-800 text-lg mb-2 block"
+                      >Name</label
+                    >
+                    <input
+                      name="name"
+                      id="name"
+                      type="text"
+                      class="w-full text-gray-800 text-base py-2 px-3 border border-gray-400 rounded-md focus:bg-gray-100 outline-none transition-all"
+                      placeholder="Enter name"
+                    />
+                  </div>
+                  <div>
+                    <label for="name" class="text-gray-800 text-lg mb-2 block"
+                      >Email</label
+                    >
+                    <input
+                      name="email"
+                      id="email"
+                      type="email"
+                      class="w-full text-gray-800 text-base py-2 px-3 border border-gray-400 rounded-md focus:bg-gray-100 outline-none transition-all"
+                      placeholder="Enter Email"
+                    />
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label for="name" class="text-gray-800 text-lg mb-2 block"
+                      >Mobile phone</label
+                    >
+                    <div
+                      class="flex items-center mt-1 rounded-md border border-gray-400"
+                    >
+                      <!-- Country Code Dropdown -->
+                      <select
+                        class="text-gray-800 rounded-b-md text-base py-2 px-3 focus:bg-gray-100 outline-none transition-all"
+                        name="country_code"
+                        id="country_code"
+                      >
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+90">+90</option>
+                        <!-- Add other country codes as needed -->
+                      </select>
+
+                      <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        class="w-full text-gray-800 text-base rounded-r-md py-2 px-3 border-l border-gray-400 focus:bg-gray-100 outline-none transition-all"
+                        placeholder="Enter phone number"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label for="name" class="text-gray-800 text-lg mb-2 block"
+                      >Type of request</label
+                    >
+
+                    <select
+                      class="w-full text-gray-800 text-base py-2 px-3 border border-gray-400 rounded-md focus:bg-gray-100 outline-none transition-all"
+                    >
+                      <option selected>I'm a guest</option>
+                      <option>I'm a guest</option>
+                      <option>Lorem ipsum dolor</option>
+                      <option>I'm a guest</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="w-full">
+                  <label for="name" class="text-gray-800 text-lg mb-2 block"
+                    >Do you have an existing reservation?</label
+                  >
+
+                  <select
+                    class="w-full text-gray-800 text-base py-2 px-3 border border-gray-400 rounded-md focus:bg-gray-100 outline-none transition-all"
+                  >
+                    <option selected>No</option>
+                    <option>I'm a guest</option>
+                    <option>Lorem ipsum dolor</option>
+                    <option>I'm a guest</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="name" class="text-gray-800 text-lg mb-2 block"
+                    >Tell us more</label
+                  >
+
+                  <textarea
+                    class="h-[150px] md:h-[200px] w-full text-gray-800 text-base py-2 px-3 border border-gray-400 rounded-md focus:bg-gray-100 outline-none transition-all"
+                    placeholder="Details of your property or any information about your project"
+                    name=""
+                    id=""
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label class="text-gray-800 text-lg mb-2 block"
+                    >Is your property also available for sale?</label
+                  >
+
+                  <div class="flex gap-4">
+                    <div class="flex items-center gap-2">
+                      <input
+                        id="yes"
+                        type="radio"
+                        value=""
+                        name="propertySale"
+                        class="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500"
+                      />
+                      <label for="yes" class="text-gray-800 text-lg block"
+                        >Yes</label
+                      >
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input
+                        id="no"
+                        type="radio"
+                        value=""
+                        name="propertySale"
+                        class="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500"
+                      />
+                      <label for="no" class="text-gray-800 text-lg block"
+                        >No</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="px-8 py-2.5 text-sm flex w-fit rounded-full font-bold text-white border-2 border-heading bg-heading transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading"
+                >
+                  Send a request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <img
+          class="w-full object-cover h-[400px] md:h-[700px] lg:h-[900px] rounded-b-lg md:rounded-b-none md:rounded-l-lg md:w-[300px] xl:w-[600px] lg:w-[500px]"
+          src="./src/assets/images/cta.png"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <!-- Only show tab and mobile view -->
+    <section
+      class="fixed bottom-0 flex justify-between items-start gap-5 px-4 py-5 border-t bg-white z-30 w-full lg:hidden"
+    >
+      <!-- Login Button (hidden on small screens) -->
+      <button
+        class="px-4 py-2 text-sm rounded-full font-bold text-gray-500 border-2 bg-transparent hover:bg-gray-100 transition-all ease-in-out duration-300"
+      >
+        Login
+      </button>
+
+      <!-- Become Host Button (hidden on small screens) -->
+      <button
+        class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-heading bg-heading transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading"
+      >
+        Become Host
+      </button>
+
+      <!-- Language Dropdown Button -->
+      <div class="relative inline-block">
+        <button
+          class="language-button flex items-center px-3 py-1 rounded focus:outline-none"
+        >
+          EN
+          <i class="fas fa-chevron-down ml-2 text-sm"></i>
+        </button>
+        <!-- Dropdown Items for Language Selection -->
+        <div
+          class="absolute right-0 bottom-6 mb-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
+        >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >EN</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >FR</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >ES</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+            >DE</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer area -->
+    <footer
+      class="bg-background pt-10 pb-28 md:py-20 text-sm text-gray-600 font-libre"
+    >
+      <div class="max-w-full lg:max-w-[1104px] mx-auto px-4">
+        <!-- Upper Section -->
+        <div
+          class="flex flex-wrap flex-col md:flex-row justify-between mb-5 md:mb-10"
+        >
+          <!-- Logo and Social Media -->
+          <div
+            class="flex border-b md:border-b-0 pb-5 md:pb-0 flex-row md:flex-col justify-between md:items-start gap-4"
+          >
+            <div class="flex flex-col gap-4">
+              <a href="">
+                <img
+                  src="./src/assets/images/MonsieurChalets-footer-logo.png"
+                  alt="MonsieurChalets"
+                  class="w-10"
+                />
+              </a>
+              <div class="flex gap-4">
+                <a
+                  href="#"
+                  class="text-lightParagraph hover:text-gray-800"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-lightParagraph hover:text-gray-800"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-lightParagraph hover:text-gray-800"
+                  aria-label="Pinterest"
+                >
+                  <i class="fab fa-pinterest text-xl"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Language Dropdown -->
+            <div class="relative">
+              <button
+                class="language-button flex items-center border border-gray-300 bg-white hover:bg-gray-200 px-3 py-1 rounded-full focus:outline-none"
+              >
+                EN
+                <i class="fas fa-chevron-down ml-2 text-sm"></i>
+              </button>
+              <!-- Dropdown Items -->
+              <div
+                class="absolute right-0 bottom-16 md:bottom-9 md:left-0 mt-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >EN</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >FR</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >ES</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                  >DE</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Links -->
+          <div
+            class="flex flex-col gap-4 lg:gap-5 border-b md:border-b-0 py-5 md:pb-0"
+          >
+            <a href="#" class="block text-paragraph hover:text-heading">Blog</a>
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Become a host</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Gift Certificate</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Training Academy</a
+            >
+          </div>
+          <div
+            class="flex flex-col gap-4 lg:gap-5 border-b md:border-b-0 py-5 md:pb-0"
+          >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >About Us</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Careers</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading">Help</a>
+          </div>
+          <div class="flex flex-col gap-4 lg:gap-5 py-5 md:pb-0">
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Contact Us</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Owner Section</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading">Help</a>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div
+          class="border-t border-gray-300 pt-5 md:pt-10 md:pb-10 lg:pb-0 flex flex-wrap justify-between items-center text-[14px]"
+        >
+          <div class="text-center md:text-left w-full md:w-auto">
+            © 2024 - MonsieurChalets.com. All rights reserved
+          </div>
+          <div class="text-center md:text-right w-full md:w-auto">
+            <a href="#" class="text-paragraph hover:text-heading"
+              >Policies & Terms</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./src/js/agency.js"></script>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

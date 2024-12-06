@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MonsieurChalets</title>
+    <title>Home - MonsieurChalets</title>
 
     <!-- Google font -->
     <link
@@ -29,7 +29,7 @@
       class="flex bg-white font-[Inter] min-h-[80px] tracking-wide relative z-50"
     >
       <div
-        class="flex flex-wrap items-center justify-between px-3 mx-auto lg:px-5 py-3 gap-4 w-full "
+        class="flex flex-wrap items-center justify-between px-3 mx-auto lg:px-5 py-3 gap-4 w-full"
       >
         <!-- Logo Section -->
         <a href="javascript:void(0)">
@@ -195,56 +195,1295 @@
     <section class="py-10 px-3 md:py-20">
       <div class="container mx-auto">
         <!-- Banner top bar text area -->
-        <div class="w-full lg:w-[850px] mx-auto text-center">
+        <div class="w-full lg:w-[630px] mx-auto text-center">
           <h1 class="text-3xl md:text-5xl lg:text-6xl font-normal text-heading">
-            The top 1% of curated vacation rentals worldwide
+            Luxurious cottages for rent in Québec
           </h1>
-          <p class="mt-4 text-paragraph">
-            MonsieurChalets is the destination for booking exceptional homes
-          </p>
+          <p class="mt-4 text-paragraph">Your stays must be memorable</p>
+        </div>
+
+        <!-- Banner filtering bar -->
+        <div class="pt-7 w-full lg:w-[780px] mx-auto">
+          <form action="">
+            <div
+              class="flex flex-col md:flex-row border rounded-lg md:rounded-full border-gray-200 md:p-1 md:items-center md:gap-2"
+            >
+              <div class="w-full md:w-[30%]">
+                <select
+                  class="w-full border-b border-gray-200 md:border-b-0 rounded-t-lg md:rounded-t-none md:rounded-l-full p-3 md:p-2.5 text-gray-800 text-base outline-none transition-all"
+                  name=""
+                  id=""
+                >
+                  <option value="Montréal">Add a city or a region</option>
+                  <option value="Québec">Québec</option>
+                  <option value="Trois-Rivières">Trois-Rivières</option>
+                  <option value="Sherbrooke">Sherbrooke</option>
+                  <option value="Saguenay">Saguenay</option>
+                </select>
+              </div>
+
+              <div class="w-full md:w-[30%]">
+                <input
+                  class="w-full border-b md:border-b-0 rounded-t-lg md:rounded-t-none md:border-x border-gray-200 p-3 md:p-2.5 text-gray-800 text-base outline-none transition-all"
+                  type="datetime-local"
+                  name=""
+                  placeholder="Dates"
+                  id=""
+                />
+              </div>
+
+              <div class="w-full md:w-[30%]">
+                <select
+                  class="w-full border-b border-gray-200 md:border-b-0 rounded-t-lg md:rounded-t-none md:rounded-l-full p-3 md:p-2.5 text-gray-800 text-base outline-none transition-all"
+                  name=""
+                  id=""
+                >
+                  <option value="Montréal">2 Guests</option>
+                  <option value="Québec">2 Guests</option>
+                  <option value="Trois-2 Guests">4 Guests</option>
+                  <option value="Sherbrooke">7 Guests</option>
+                  <option value="Saguenay">Saguenay</option>
+                </select>
+              </div>
+              <div
+                class="md:w-[10%] text-right p-4 md:p-0 md:border-l border-gray-200"
+              >
+                <button
+                  class="w-full md:w-[40px] h-[40px] bg-[#2287AA] text-white hover:text-black md:border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition"
+                >
+                  <i class="fa-solid fa-magnifying-glass hidden md:block"></i>
+                  <span class="md:hidden block text-white hover:text-black"
+                    >Search</span
+                  >
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
 
-    <!-- Main Banner area -->
-    <section
-      class="md:mx-3 bg-cover bg-center py-5 px-3 md:py-20 rounded-lg lg:rounded-3xl"
-      style="
-        background-image: url('./src/assets/images/MonsieurChaletshome collection.jpg');
-      "
-    >
-      <div class="container mx-auto">
-        <div class="w-full lg:w-[850px] mx-auto bg-white p-10 rounded-2xl">
-          <img
-            src="./src/assets/images/MonsieurChalets-footer-logo.png"
-            alt="MonsieurChalets"
-            class="w-10"
-          />
-          <h2 class="text-2xl md:text-3xl lg:text-4xl leading-tight py-5">
-            MonsieurChalets is the world's leading curated home collection
-          </h2>
-          <div class="">
-            <p>Here's why.</p>
-            <p class="py-4">
-              MonsieurChlaets has redefined the vacation rental landscape. We
-              are the only <br />
-              platform that meticulously curates extraordinary homes worldwide
-              on an unprecedented scale.
-            </p>
-            <p>
-              Our unique blend of home expertise, customer-centric focus, and
-              cutting-edge AI technology has propelled us into an exceptional
-              league of our own.
-            </p>
+    <!-- image slider -->
+    <section class="py-10 md:pb-20">
+      <div class="overflow-x-hidden relative">
+        <button
+          id="prev"
+          class="absolute left-2 md:left-10 top-1/2 w-[40px] h-[40px] md:w-[60px] md:h-[60px] transform -translate-y-1/2 bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition z-40"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div
+          id="slide"
+          class="flex justify-center items-center relative h-[400px] md:h-[500px]"
+        >
+          <div
+            class="item h-[400px] md:h-[500px] w-[80%] md:w-[65%] lg:w-[50] bg-no-repeat bg-cover bg-center absolute transition duration-[1.4s] ease-out rounded-lg"
+            style="background-image: url(./src/assets/images/home-slider-1.png)"
+          ></div>
+          <div
+            class="item h-[400px] md:h-[500px] w-[80%] md:w-[65%] lg:w-[50] bg-no-repeat bg-cover bg-center absolute transition duration-[1.4s] ease-out rounded-lg"
+            style="background-image: url(./src/assets/images/home-slider-2.png)"
+          ></div>
+          <div
+            class="item h-[400px] md:h-[500px] w-[80%] md:w-[65%] lg:w-[50] bg-no-repeat bg-cover bg-center absolute transition duration-[1.4s] ease-out rounded-lg"
+            style="background-image: url(./src/assets/images/home-slider-3.png)"
+          ></div>
+          <div
+            class="item h-[400px] md:h-[500px] w-[80%] md:w-[65%] lg:w-[50] bg-no-repeat bg-cover bg-center absolute transition duration-[1.4s] ease-out rounded-lg"
+            style="background-image: url(./src/assets/images/home-slider-4.png)"
+          ></div>
+        </div>
+
+        <button
+          id="next"
+          class="absolute right-2 md:right-10 top-1/2 w-[40px] h-[40px] md:w-[60px] md:h-[60px] transform -translate-y-1/2 bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition z-40"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- features items -->
+    <section class="py-20">
+      <div class="w-full px-3 lg:w-[850px] mx-auto text-center pb-20">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl">
+          Exclusive chalet collection
+        </h2>
+        <p class="pt-3">
+          We select our chalets with unrivalled rigor. Our extremely high
+          standards ensure that you stay in the most beautiful the most
+          beautiful cottages in Quebec
+        </p>
+        <button
+          class="px-4 py-2 text-sm flex w-fit mx-auto mt-9 rounded-full font-bold text-white border-2 border-heading bg-heading transition-all ease-in-out duration-300 hover:bg-transparent hover:text-heading"
+        >
+          See the chalets collection
+        </button>
+      </div>
+
+      <div class="w-full xl:w-[1104px] mx-auto lg:px-0 px-6">
+        <img
+          class="w-full object-cover h-[400px] md:h-[500px] -mb-[150px] md:-mb-[200px] rounded-3xl"
+          src="./src/assets/images/Exclusive chalet collection.png"
+          alt=""
+        />
+      </div>
+      <div
+        class="bg-black pb-10 md:pb-20 pt-[200px] md:pt-[250px] rounded-3xl px-3"
+      >
+        <div class="w-full xl:w-[1104px] mx-auto">
+          <div class="flex flex-wrap gap-4">
+            <!-- Feature Item -->
+            <div
+              class="flex w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-12px)] flex-col text-center p-8 border border-gray-700 rounded-lg shadow transition-all hover:bg-gray-900"
+            >
+              <h2 class="text-2xl text-gray-500 pb-5">01</h2>
+              <h3 class="text-lg md:text-2xl text-white pb-3">
+                Careful selection
+              </h3>
+              <p class="text-gray-300 text-sm">
+                Discover luxury chalets carefully selected and inspected to
+                ensure that everything is perfect, so you won't be disappointed.
+                We want your stay to be memorable.
+              </p>
+            </div>
+            <div
+              class="flex w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-12px)] flex-col text-center p-8 border border-gray-700 rounded-lg shadow transition-all hover:bg-gray-900"
+            >
+              <h2 class="text-2xl text-gray-500 pb-5">02</h2>
+              <h3 class="text-lg md:text-2xl text-white pb-3">
+                Butler service
+              </h3>
+              <p class="text-gray-300 text-sm">
+                Upgrade your stay with tailor-made services whose sole mission
+                is to make your stay exceptional. Catering, massage therapy,
+                private chauffeur, in-home chef, equipment rental, etc.
+              </p>
+            </div>
+            <div
+              class="flex w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-12px)] flex-col text-center p-8 border border-gray-700 rounded-lg shadow transition-all hover:bg-gray-900"
+            >
+              <h2 class="text-2xl text-gray-500 pb-5">03</h2>
+              <h3 class="text-lg md:text-2xl text-white pb-3">Peace of mind</h3>
+              <p class="text-gray-300 text-sm">
+                In the rare event that a problem arises, our dedicated team will
+                do everything possible to ensure that you are satisfied with
+                your time at the chalet. The quality of your stay is our
+                priority.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Client logo infinity  carousel -->
+    <!-- Popular cottages -->
+    <section class="py-10 md:pb-20 px-3">
+      <div class="w-full xl:max-w-[1104px] mx-auto lg:px-3 xl:px-0">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl">Popular cottages</h2>
 
-    <section class="pt-5 md:pt-10">
-      <div class="container mx-auto">
+        <!-- Cottages Filtering Carousel -->
+        <div class="relative mt-14 px-10">
+          <!-- Previous Button -->
+          <button
+            id="cottagesPrev"
+            class="absolute left-0 top-1/2 w-[40px] h-[40px] transform -translate-y-1/2 bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition z-40"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <!-- Carousel Wrapper -->
+          <div id="cottagesFilteringWrapper" class="overflow-hidden w-full">
+            <div
+              id="cottagesFiltering"
+              class="flex transition-transform duration-700 ease-in-out px-2"
+            >
+              <!-- Carousel Items -->
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                All Regions
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Charlevoix
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Laurentides
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Lanaudière
+              </button>
+
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Bas-Saint-Laurent
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Mauricie
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Mauricie
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Mauricie
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Mauricie
+              </button>
+              <button
+                class="cottagesFilteringItem mr-1 flex-shrink-0 px-4 py-2 text-sm lg:w-[calc(100%/6)] md:w-[calc(100%/4)] w-[calc(100%/2)] rounded-full text-gray-600 border-2 border-gray-300 bg-white transition-all duration-300 hover:bg-black hover:text-white"
+              >
+                Mauricie
+              </button>
+
+              <!-- Add more items here -->
+            </div>
+          </div>
+
+          <!-- Gradient overlay for aesthetics -->
+          <div
+            class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10"
+          ></div>
+
+          <!-- Next Button -->
+          <button
+            id="cottagesNext"
+            class="absolute right-0 top-1/2 w-[40px] h-[40px] transform -translate-y-1/2 bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition z-40"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Items -->
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-10">
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 shadow-md overflow-hidden rounded-lg hover:shadow-lg transition-all relative"
+          >
+            <div class="slider-container w-full relative">
+              <div
+                class="flex items-center justify-center gap-2 absolute top-3 right-2 z-10"
+              >
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <div
+                  class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-400 cursor-pointer hover:text-white"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              <!-- Image Slider -->
+              <div
+                class="productGallery h-[300px] flex relative w-full overflow-hidden"
+              >
+                <img
+                  src="./src/assets/images/LE-CÔTÉ-SUD.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+                <img
+                  src="./src/assets/images/LE-TAMARÄK.png"
+                  alt="Product 1"
+                  class="slide w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                />
+              </div>
+
+              <!-- Image overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black opacity-30 z-[5]"
+              ></div>
+
+              <div
+                class="flex justify-between px-2 pb-2 z-10 absolute bottom-2 w-full"
+              >
+                <div class="flex w-7/12 gap-2">
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                  <span class="text-[12px] text-white">14 Guests</span>
+                </div>
+                <div class="imageDot flex gap-2 z-10"></div>
+              </div>
+              <!-- Dots -->
+            </div>
+
+            <div class="p-6 bg-white">
+              <h3 class="text-base font-inter font-normal text-heading">
+                LE-PERCHOIR
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Les Éboulements, Charlevoix, Capitale-Nationale, Québec
+              </p>
+              <h3 class="text-base font-inter font-normal text-heading mt-2">
+                C$350/night
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-10 md:pb-20">
+      <div
+        class="w-full lg:w-[1104px] mx-auto rounded-2xl border border-gray-300 pb-10"
+      >
+        <div
+          class="w-full p-5 md:px-20 rounded-t-2xl text-center flex flex-col items-center justify-center min-h-[500px] bg-cover bg-center"
+          style="
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
+              url('./src/assets/images/MonsieurChalets.jpeg');
+          "
+        >
+          <!-- Content -->
+          <div class="flex flex-col gap-2">
+            <h2
+              class="md:w-8/12 w-full mx-auto text-3xl md:text-5xl lg:text-6xl font-normal leading-normal py-0 lg:py-5 text-white"
+            >
+              MonsieurChalets, Luxurious by Nature
+            </h2>
+            <p class="text-white pb-5">
+              It's our very essence, what more can we say?
+            </p>
+            <!-- Ratting -->
+            <div
+              class="flex items-center gap-3 justify-center flex-col md:flex-row"
+            >
+              <img src="./src/assets/images/ratting.png" alt="" />
+              <p class="text-white text-sm">Rating by Google Review Users</p>
+            </div>
+          </div>
+        </div>
+
         <div class="relative overflow-hidden bg-white py-10">
           <!-- Left gradient overlay -->
           <div
@@ -253,7 +1492,7 @@
 
           <!-- Scrolling logos -->
           <div class="logo-track flex space-x-10 animate-scroll">
-            >
+            &gt;
             <!-- Original set of logos -->
             <img
               src="./src/assets/images/client logo 1.png"
@@ -316,281 +1555,250 @@
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="py-10 px-3 md:py-24">
-      <div class="container mx-auto">
-        <div class="w-full lg:w-[850px] mx-auto">
-          <h2 class="text-2xl md:text-3xl lg:text-4xl leading-tight pb-12">
-            A one of a kind booking platform
-          </h2>
-          <div class="flex items-center gap-4 md:gap-6 pb-8">
-            <h1 class="text-[#E5E5E5] text-6xl font-normal">1</h1>
-            <div class="flex flex-col gap-1">
-              <h4 class="font-medium text-lg lg:text-xl">
-                The world’s largest collection of curated homes
-              </h4>
-              <p class="text-base text-lightParagraph">
-                Plum Guide is the only booking platform with 40,000+of the
-                world’s most remarkable rentals.
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center gap-4 md:gap-6 pb-8">
-            <h1 class="text-[#E5E5E5] text-6xl font-normal">2</h1>
-            <div class="flex flex-col gap-1">
-              <h4 class="font-medium text-lg lg:text-xl">
-                Powered by “award-winning” AI technology
-              </h4>
-              <p class="text-base text-lightParagraph">
-                Build from scratch. Our AI backed curation model is unique to
-                our business.
-              </p>
-            </div>
-          </div>
-          <div class="flex items-center gap-4 md:gap-6 pb-8">
-            <h1 class="text-[#E5E5E5] text-6xl font-normal">3</h1>
-            <div class="flex flex-col gap-1">
-              <h4 class="font-medium text-lg lg:text-xl">
-                Rated “Excellent” on TrustPilot
-              </h4>
-              <p class="text-base text-lightParagraph">
-                Rated excellent for a reason. Need we say more?
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Experiences -->
 
-    <!-- brand video area -->
-    <section
-      class="relative md:mx-3 bg-cover bg-center py-5 px-3 md:py-20 rounded-lg lg:rounded-3xl min-h-fit md:min-h-[650px]"
-      style="
-        background-image: url('./src/assets/images/The New York Times.png');
-      "
-    >
-      <!-- Overlay -->
+    <section class="py-10 md:pb-20">
+      <!-- Slider dot and arrow -->
       <div
-        class="absolute inset-0 bg-gradient-to-b from-black opacity-90 rounded-lg lg:rounded-3xl"
-      ></div>
+        class="w-full lg:w-[1104px] mx-auto flex justify-between items-center px-2 xl:px-0 gp-2 lg:gap-5"
+      >
+        <h2 class="text-2xl md:text-3xl lg:text-4xl">Popular cottages</h2>
 
-      <div class="container mx-auto relative z-10">
+        <div class="flex gap-5 items-center">
+          <div class="experiences-pagination">
+            <span id="experiences-current-page">1</span>/<span
+              id="experiences-total-pages"
+              >1</span
+            >
+          </div>
+          <div class="flex gap-5">
+            <button
+              id="experiencesPrev"
+              class="w-[40px] h-[40px] transform bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              id="experiencesNext"
+              class="w-[40px] h-[40px] transform bg-white border border-gray-300 rounded-full shadow-md hover:bg-gray-100 transition"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider items -->
+      <div
+        id="experiences-slider-container"
+        class="w-full pl-3 lg:pl-0 lg:w-[90%] xl:w-[80%] ml-auto pt-20"
+      >
         <div
-          class="w-full lg:w-[850px] mx-auto p-5 md:px-20 rounded-2xl text-center"
+          class="experiences-slider-wrapper relative overflow-hidden flex transition-transform duration-500 ease-linear"
         >
-          <h2
-            class="text-2xl md:text-3xl lg:text-4xl leading-normal py-5 text-white"
-          >
-            “MonsieurChalets stands out for its selective list of properties”
-          </h2>
-          <p class="text-white">— The New York Times</p>
-          <!-- Video Play Icon -->
-          <a
-            class="pulsing-glow relative w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mt-10 md:mt-20"
-            href="#"
-            ><i class="fa-solid fa-play text-black text-3xl"></i
-          ></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Others information -->
-    <section class="py-20">
-      <div class="container mx-auto">
-        <div class="w-full lg:w-[850px] mx-auto p-5 md:px-20">
-          <div class="pb-16 border-b text-center">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">
-              Our model achieves <br />
-              a 91% match rate to the human eye
-            </h2>
-            <p class="leading-8">
-              The journey began by training the model to align with our design
-              standards—a <br />
-              staggering 91% match between AI judgement and our Design
-              Director's discerning eye. Homes gaining AI approval then undergo
-              a rigorous in-house home expert review—a fusion of human and
-              machine perfection.
-            </p>
-          </div>
-          <div class="py-16 border-b text-center">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">
-              AI trained on data from <br />
-              more than 100,000 vetted homes
-            </h2>
-            <p class="leading-8">
-              The journey began by training the model to align with our design
-              standards—a staggering 91% match between AI judgement and our
-              Design Director's discerning eye. Homes gaining AI approval then
-              undergo a rigorous in-house home expert review—a fusion of human
-              and machine perfection.
-            </p>
-          </div>
-          <div class="pt-16 text-center">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">
-              AI has allowed us to <br />
-              4x our revenue per head
-            </h2>
-            <p class="leading-8">
-              The journey began by training the model to align with our design
-              standards—a staggering 91% match between AI judgement and our
-              Design Director's discerning eye. Homes gaining AI approval then
-              undergo a rigorous in-house home expert review—a fusion of human
-              and machine perfection.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- testimonial area -->
-
-    <section class="pb-20 mx-3">
-      <div class="container mx-auto">
-        <div class="w-full lg:w-[850px] mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl lg:text-4xl">
-            More stays, <br />
-            without working harder
-          </h2>
-          <p class="pt-3">
-            Posting is free, we only keep a commission when our team sends you
-            new visitors through our agency. You retain full control of your
-            property your property and we act as your facilitating partner.
-          </p>
-        </div>
-
-        <div class="w-full lg:w-[1000px] mx-auto pt-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="experiences-slider-track flex w-full gap-2">
             <div
-              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              class="experiences-slide flex h-[350px] rounded p-5 justify-end flex-col bg-no-repeat overflow-hidden"
               style="
-                background-image: url('./src/assets/images/testimonials banner 1.png');
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.6)
+                  ),
+                  url('./src/assets/images/306 chalets to rent.png');
+                background-position: bottom center;
+                background-size: cover;
               "
             >
-              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
-                <img
-                  class="block"
-                  src="./src/assets/images/5 star.png"
-                  alt=""
-                />
-                <p class="py-4">
-                  We had a pleasant weekend. The house is well maintained and
-                  clean. The decor overlooking the river is spectacular.
-                </p>
-
-                <div class="flex justify-between items-end gap-5">
-                  <div>
-                    <h4 class="font-bold text-sm pb-1 font-inter">
-                      Marie-Therese Martel
-                    </h4>
-                    <p class="text-xs">14 July 2023</p>
-                  </div>
-                  <img src="./src/assets/images/Google Logo.png" alt="" />
-                </div>
-              </div>
+              <h4 class="text-base font-medium text-white">
+                Tiny cottages for rent
+              </h4>
+              <p class="text-gray-300 text-sm mt-2">306 chalets to rent</p>
             </div>
             <div
-              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              class="experiences-slide flex h-[350px] rounded p-5 justify-end flex-col bg-no-repeat overflow-hidden"
               style="
-                background-image: url('./src/assets/images/testimonials banner 2.png');
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.6)
+                  ),
+                  url('./src/assets/images/306 chalets to rent.png');
+                background-position: bottom center;
+                background-size: cover;
               "
             >
-              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
-                <img
-                  class="block"
-                  src="./src/assets/images/5 star.png"
-                  alt=""
-                />
-                <p class="py-4">
-                  We had a pleasant weekend. The house is well maintained and
-                  clean. The decor overlooking the river is spectacular.
-                </p>
-
-                <div class="flex justify-between items-end gap-5">
-                  <div>
-                    <h4 class="font-bold text-sm pb-1 font-inter">
-                      Marie-Therese Martel
-                    </h4>
-                    <p class="text-xs">14 July 2023</p>
-                  </div>
-                  <img src="./src/assets/images/Google Logo.png" alt="" />
-                </div>
-              </div>
+              <h4 class="text-base font-medium text-white">
+                Tiny cottages for rent
+              </h4>
+              <p class="text-gray-300 text-sm mt-2">306 chalets to rent</p>
             </div>
             <div
-              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              class="experiences-slide flex h-[350px] rounded p-5 justify-end flex-col bg-no-repeat overflow-hidden"
               style="
-                background-image: url('./src/assets/images/testimonials banner 3.png');
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.6)
+                  ),
+                  url('./src/assets/images/306 chalets to rent.png');
+                background-position: bottom center;
+                background-size: cover;
               "
             >
-              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
-                <img
-                  class="block"
-                  src="./src/assets/images/5 star.png"
-                  alt=""
-                />
-                <p class="py-4">
-                  We had a pleasant weekend. The house is well maintained and
-                  clean. The decor overlooking the river is spectacular.
-                </p>
-
-                <div class="flex justify-between items-end gap-5">
-                  <div>
-                    <h4 class="font-bold text-sm pb-1 font-inter">
-                      Marie-Therese Martel
-                    </h4>
-                    <p class="text-xs">14 July 2023</p>
-                  </div>
-                  <img src="./src/assets/images/Google Logo.png" alt="" />
-                </div>
-              </div>
+              <h4 class="text-base font-medium text-white">
+                Tiny cottages for rent
+              </h4>
+              <p class="text-gray-300 text-sm mt-2">306 chalets to rent</p>
             </div>
+
             <div
-              class="px-3 py-5 bg-cover bg-center rounded md:min-h-[300px] lg:min-h-[380px] lg:px-5 lg:py-8 flex items-center gap-5"
+              class="experiences-slide flex h-[350px] rounded p-5 justify-end flex-col bg-no-repeat overflow-hidden"
               style="
-                background-image: url('./src/assets/images/testimonials banner 4.png');
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.6)
+                  ),
+                  url('./src/assets/images/306 chalets to rent.png');
+                background-position: bottom center;
+                background-size: cover;
               "
             >
-              <div class="bg-white p-5 w-full rounded-r-lg rounded-s-lg">
-                <img
-                  class="block"
-                  src="./src/assets/images/5 star.png"
-                  alt=""
-                />
-                <p class="py-4">
-                  We had a pleasant weekend. The house is well maintained and
-                  clean. The decor overlooking the river is spectacular.
-                </p>
+              <h4 class="text-base font-medium text-white">
+                Tiny cottages for rent
+              </h4>
+              <p class="text-gray-300 text-sm mt-2">306 chalets to rent</p>
+            </div>
 
-                <div class="flex justify-between items-end gap-5">
-                  <div>
-                    <h4 class="font-bold text-sm pb-1 font-inter">Emma</h4>
-                    <p class="text-xs">14 July 2023</p>
-                  </div>
-                  <img src="./src/assets/images/Google Logo.png" alt="" />
-                </div>
-              </div>
+            <div
+              class="experiences-slide flex h-[350px] rounded p-5 justify-end flex-col bg-no-repeat overflow-hidden"
+              style="
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.6)
+                  ),
+                  url('./src/assets/images/306 chalets to rent.png');
+                background-position: bottom center;
+                background-size: cover;
+              "
+            >
+              <h4 class="text-base font-medium text-white">
+                Tiny cottages for rent
+              </h4>
+              <p class="text-gray-300 text-sm mt-2">306 chalets to rent</p>
+            </div>
+
+            <div
+              class="experiences-slide flex h-[350px] rounded p-5 justify-end flex-col bg-no-repeat overflow-hidden"
+              style="
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.6)
+                  ),
+                  url('./src/assets/images/306 chalets to rent.png');
+                background-position: bottom center;
+                background-size: cover;
+              "
+            >
+              <h4 class="text-base font-medium text-white">
+                Tiny cottages for rent mamun
+              </h4>
+              <p class="text-gray-300 text-sm mt-2">306 chalets to rent</p>
+            </div>
+
+            <div
+              class="experiences-slide flex h-[350px] rounded p-5 justify-end flex-col bg-no-repeat overflow-hidden"
+              style="
+                background: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.6)
+                  ),
+                  url('./src/assets/images/306 chalets to rent.png');
+                background-position: bottom center;
+                background-size: cover;
+              "
+            >
+              <h4 class="text-base font-medium text-white">
+                Tiny cottages for rent
+              </h4>
+              <p class="text-gray-300 text-sm mt-2">306 chalets to rent</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- call to action area -->
-    <section class="pb-20 mx-3">
-      <div class="container mx-auto">
-        <div class="w-full lg:w-[1000px] mx-auto text-center">
-          <img
-            src="./src/assets/images/MonsieurChalets-footer-logo.png"
-            alt="MonsieurChalets"
-            width="50"
-            class="block mx-auto"
-          />
-          <h2 class="text-2xl md:text-3xl lg:text-4xl py-5">Talk to us</h2>
-          <p>
-            If you're interested in forming a partnership <br />
-            with MonsieurChalets,
-            <span class="text-heading text-lg">speak to our team.</span>
-          </p>
+    <!--  -->
+
+    <section
+      class="bg-background px-3 pt-10 md:py-20 text-sm text-gray-600 font-libre"
+    >
+      <div class="max-w-full lg:max-w-[1104px] mx-auto pb-20 pt-5 border-b">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl text-center">
+          The MonsieurChalets difference
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
+          <div class="flex flex-col justify-center px-5 lg:px-0">
+            <div
+              class="flex justify-center items-center w-16 h-16 border rounded-full border-r-gray-300 mx-auto mb-5"
+            >
+              <img class="w-[25px]" src="./src/assets/images/time.png" alt="" />
+            </div>
+            <h3 class="text-lg md:text-2xl pb-1 text-center">
+              10 times faster
+            </h3>
+            <p class="text-center mt-2">
+              We've selected the 10% best cottages in Quebec, so you don't have
+              to.
+            </p>
+          </div>
+          <div class="flex flex-col justify-center px-5 lg:px-0">
+            <div
+              class="flex justify-center items-center w-16 h-16 border rounded-full border-r-gray-300 mx-auto mb-5"
+            >
+              <img
+                class="w-[25px]"
+                src="./src/assets/images/icon2.png"
+                alt=""
+              />
+            </div>
+            <h3 class="text-lg md:text-2xl pb-1 text-center">
+              Best price guaranteed
+            </h3>
+            <p class="text-center mt-2">
+              In the rare event that one of our cottages is priced lower on
+              another platform, we'll match the price.
+            </p>
+          </div>
+          <div class="flex flex-col justify-center px-5 lg:px-0">
+            <div
+              class="flex justify-center items-center w-16 h-16 border rounded-full border-r-gray-300 mx-auto mb-5"
+            >
+              <img
+                class="w-[25px]"
+                src="./src/assets/images/icon 5.png"
+                alt=""
+              />
+            </div>
+            <h3 class="text-lg md:text-2xl pb-1 text-center">
+              Inspection and verification
+            </h3>
+            <p class="text-center mt-2">
+              Our cottages are meticulously selected according to a list of
+              criteria. Quality before quantity.
+            </p>
+          </div>
+          <div class="flex flex-col justify-center px-5 lg:px-0">
+            <div
+              class="flex justify-center items-center w-16 h-16 border rounded-full border-r-gray-300 mx-auto mb-5"
+            >
+              <img class="w-[25px]" src="./src/assets/images/icon.png" alt="" />
+            </div>
+            <h3 class="text-lg md:text-2xl pb-1 text-center">
+              24/7 assistance
+            </h3>
+            <p class="text-center mt-2">
+              Get support in your search and qualified service during your stay.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -668,8 +1876,8 @@
                   src="./src/assets/images/MonsieurChalets-footer-logo.png"
                   alt="MonsieurChalets"
                   class="w-10"
-              /></a>
-
+                />
+              </a>
               <div class="flex gap-4">
                 <a
                   href="#"
@@ -696,7 +1904,6 @@
             </div>
 
             <!-- Language Dropdown -->
-
             <div class="relative">
               <button
                 class="language-button flex items-center border border-gray-300 bg-white hover:bg-gray-200 px-3 py-1 rounded-full focus:outline-none"
@@ -706,7 +1913,7 @@
               </button>
               <!-- Dropdown Items -->
               <div
-                class="absolute right-0 md:left-0 mt-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
+                class="absolute right-0 bottom-16 md:bottom-9 md:left-0 mt-2 min-w-32 bg-white border border-gray-300 rounded shadow-lg hidden z-50"
               >
                 <a
                   href="#"
@@ -733,50 +1940,39 @@
           </div>
 
           <!-- Navigation Links -->
-          <!-- Column 1 -->
+          <div
+            class="flex flex-col gap-4 lg:gap-5 border-b md:border-b-0 py-5 md:pb-0"
+          >
+            <a href="#" class="block text-paragraph hover:text-heading">Blog</a>
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Become a host</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Gift Certificate</a
+            >
+            <a href="#" class="block text-paragraph hover:text-heading"
+              >Training Academy</a
+            >
+          </div>
           <div
             class="flex flex-col gap-4 lg:gap-5 border-b md:border-b-0 py-5 md:pb-0"
           >
             <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Blog</a
+              >About Us</a
             >
             <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Become a host</a
+              >Careers</a
             >
-            <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Gift
-              Certificate</a
-            >
-            <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Training
-              Academy</a
-            >
+            <a href="#" class="block text-paragraph hover:text-heading">Help</a>
           </div>
-          <!-- Column 2 -->
-          <div
-            class="flex flex-col gap-4 lg:gap-5 border-b md:border-b-0 py-5 md:pb-0"
-          >
-            <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> About Us</a
-            >
-            <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Careers</a
-            >
-            <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Help</a
-            >
-          </div>
-          <!-- Column 3 -->
           <div class="flex flex-col gap-4 lg:gap-5 py-5 md:pb-0">
             <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Contact Us</a
+              >Contact Us</a
             >
             <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Owner Section</a
+              >Owner Section</a
             >
-            <a href="#" class="block text-paragraph hover:text-heading"
-              ></i> Help</a
-            >
+            <a href="#" class="block text-paragraph hover:text-heading">Help</a>
           </div>
         </div>
 
@@ -796,40 +1992,7 @@
       </div>
     </footer>
 
-    <script>
-      // Mobile menu toggle functionality
-      const toggleOpen = document.getElementById("toggleOpen");
-      const toggleClose = document.getElementById("toggleClose");
-      const collapseMenu = document.getElementById("collapseMenu");
-
-      function handleClick() {
-        if (collapseMenu.style.display === "block") {
-          collapseMenu.style.display = "none";
-        } else {
-          collapseMenu.style.display = "block";
-        }
-      }
-
-      toggleOpen.addEventListener("click", handleClick);
-      toggleClose.addEventListener("click", handleClick);
-
-      // Handle multiple language dropdowns
-      document.querySelectorAll(".language-button").forEach((button) => {
-        const dropdown = button.nextElementSibling; // Target the adjacent dropdown
-
-        // Toggle dropdown on button click
-        button.addEventListener("click", (e) => {
-          e.stopPropagation(); // Prevent the click from closing immediately
-          dropdown.classList.toggle("hidden");
-        });
-
-        // Close dropdown when clicking outside
-        window.addEventListener("click", (e) => {
-          if (!button.contains(e.target) && !dropdown.contains(e.target)) {
-            dropdown.classList.add("hidden");
-          }
-        });
-      });
-    </script>
+    <script src="./src/js/index.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
